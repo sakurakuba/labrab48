@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block title %} Product {% endblock %}
 {% block nav %}
-
+<a class="nav-link active" aria-current="page" href="{% url "product_add" %}">Add product</a>
+    <a class="nav-link active" aria-current="page" href="{% url "product_update" product.pk %}">Update product</a>
+    <a class="nav-link active" aria-current="page" href="{% url "product_delete" product.pk %}">Delete product</a>
 {% endblock %}
 {% block name %}
 <h2>Product details:</h2>
@@ -10,6 +12,7 @@
     <p>Product name: {{ product.prod_name }}</p>
     <p>Description: {{ product.description }}</p>
     <p>Category: {{ product.prod_category }}</p>
+    <p>Currently available amount: {{ product.balance }}</p>
     <p>Price: {{ product.price }}</p>
 {% endblock %}
 

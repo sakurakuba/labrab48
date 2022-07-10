@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} Main {% endblock %}
 {% block nav %}
-
+<a class="nav-link active" aria-current="page" href="{% url "product_add" %}">Add product</a>
 {% endblock %}
 {% block name %}
 <h1>Store</h1>
@@ -9,7 +9,7 @@
 {% block content %}
 {% for pr in product %}
     {% if pr.balance > 0 %}
-<ol class="list-group list-group-numbered">
+<ol class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-2 me-auto">
         <div class="fw-bold"><a href="{% url "product_view" pr.pk %}">{{ pr.prod_name }}</a></div>

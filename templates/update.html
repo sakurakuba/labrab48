@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Update product {% endblock %}
+{% block nav %}
+<a class="nav-link active" aria-current="page" href="{% url "product_add" %}">Add product</a>
+{% endblock %}
+{% block name %}
+<h1>Update Product</h1>
+{% endblock %}
+{% block content %}
+<form action="" method="post">
+{% include "partial/form.html" %}
+    <input type="submit" value="Update"/>
+</form>
+{% endblock %}
