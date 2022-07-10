@@ -1,0 +1,85 @@
+[
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "prod_name": "Apple AirPods Pro",
+    "description": "AirPods Pro feature Active Noise Cancellation for immersive sound. Transparency mode for hearing the world around you. They’re sweat and water resistant1 and have a customizable fit for all-day comfort.",
+    "prod_category": "audio/vidoe",
+    "balance": 100,
+    "price": "199.00",
+    "created_at": "2022-07-10T03:09:11.877Z",
+    "updated_at": "2022-07-10T03:09:11.877Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "prod_name": "Bose SoundLink Revolve",
+    "description": "SoundLink Revolve Bluetooth® speaker Triple Black. Small speaker. Big leap forward. Deep. Loud. And immersive, too. To make something so small feel so real, Bose took its sound in a new direction. Every direction. But don’t let the size of the SoundLink® Revolve speaker fool you. It’s the kind of performance you might not expect from this pint-sized enclosure.",
+    "prod_category": "audio/vidoe",
+    "balance": 90,
+    "price": "169.00",
+    "created_at": "2022-07-10T03:10:42.794Z",
+    "updated_at": "2022-07-10T03:11:17.629Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "prod_name": "LG 86\" Class - NANO85",
+    "description": "α7 Gen 4 Processor 4K Full Array Dimming Pro & TruMotion 240 Dolby Vision IQ & Dolby Atmos Audio Google Assistant, Alexa, & Apple Airplay2 Built-In Screen Size: (85.6\" Diag.)",
+    "prod_category": "tvs",
+    "balance": 50,
+    "price": "1699.00",
+    "created_at": "2022-07-10T03:13:03.222Z",
+    "updated_at": "2022-07-10T03:13:03.222Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "prod_name": "iPhone 13 Pro ( 256GB, Graphite)",
+    "description": "iPhone 13 Pro. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G.¹ Durable design and a huge leap in battery life.  6.1-inch Super Retina XDR display with ProMotion for a faster, more responsive feel² Cinematic mode adds shallow depth of field and shifts focus automatically in your videos Pro camera system with new 12MP Telephoto, Wide, and Ultra Wide cameras; LiDAR Scanner; 6x optical zoom range; macro photography; Photographic Styles, ProRes video, Smart HDR 4, Night mode, Apple ProRAW, 4K Dolby Vision HDR recording 12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording A15 Bionic chip for lightning-fast performance Up to 22 hours of video playback³ Durable design with Ceramic Shield Industry-leading IP68 water resistance⁴ 5G for superfast downloads and high-quality streaming¹ iOS 15 packs new features to do more with iPhone than ever before⁵ Supports MagSafe accessories for easy attach and faster wireless charging⁶ With an unlocked iPhone, you’re free to go with the carrier of your choice",
+    "prod_category": "cell",
+    "balance": 200,
+    "price": "1269.00",
+    "created_at": "2022-07-10T03:14:41.954Z",
+    "updated_at": "2022-07-10T03:14:41.954Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "prod_name": "iPhone 13 mini (128GB, Midnight)",
+    "description": "iPhone 13 mini. The most advanced dual-camera system ever on iPhone. Lightning-fast A15 Bionic chip. A leap in battery life. Durable design. Superfast 5G.¹ And a brighter Super Retina XDR display.  5.4-inch Super Retina XDR display² Cinematic mode adds shallow depth of field and shifts focus automatically in your videos Advanced dual-camera system with 12MP Wide and Ultra Wide cameras; Photographic Styles, Smart HDR 4, Night mode, 4K Dolby Vision HDR recording 12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording A15 Bionic chip for lightning-fast performance Up to 17 hours of video playback³ Durable design with Ceramic Shield Industry-leading IP68 water resistance⁴ 5G for superfast downloads and high-quality streaming¹ iOS 15 packs new features to do more with iPhone than ever before⁵ Supports MagSafe accessories for easy attach and faster wireless charging⁶ With an unlocked iPhone, you’re free to go with the carrier of your choice",
+    "prod_category": "cell",
+    "balance": 200,
+    "price": "849.00",
+    "created_at": "2022-07-10T03:15:42.213Z",
+    "updated_at": "2022-07-10T03:15:42.213Z"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$320000$PeC01J1bHeuG0ib0VMX45K$PlVEHOsXYdaEk0eppUvxUe6U3dKMFmGcY8n1Lk1DyPQ=",
+    "last_login": "2022-07-10T03:08:11.556Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-07-10T03:05:33.607Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
