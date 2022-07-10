@@ -7,11 +7,11 @@
         </select>
     <br/>
     <label>Product name:</label><br/>
-    <input type="text" name="prod_name", value="{{ product.prod_name }}"/><br/>
+    <input type="text" name="prod_name" value="{{ product.prod_name }}"/><br/>
     <label>Description:</label><br/>
     <textarea name="description">{{ product.description }}</textarea><br/>
     <label>Balance:</label><br/>
-    <input type="number" name="balance", value="{{ product.balance }}"/><br/>
+    <input type="number" min="0" name="balance" value="{{ product.balance }}"/><br/>
     <label>Price:</label><br/>
-    <input type="number" name="price", value="{{ product.price }}"/><br/>
+    <input type="number" min="0.00" name="price" value="{{ product.price }}"/><br/>
     <br/>
