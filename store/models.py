@@ -2,7 +2,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 # Create your models here.
-CATEGORY_CHOICES = [('other', 'other'), ('audio/vidoe', 'Audio/Video'), ('tvs', 'TVs'), ('cell', 'Cell Phones')]
+CATEGORY_CHOICES = [('other', 'other'), ('audio/video', 'Audio/Video'), ('tvs', 'TVs'), ('cell', 'Cell Phones')]
 
 
 class Product(models.Model):
@@ -15,4 +15,4 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
 
     def __str__(self):
-        return f"{self.id}. {self.prod_name}: {self.prod_category}, {self.price}"
+        return f"{self.id}. {self.prod_name}: price {self.price},  category - {self.prod_category}"
