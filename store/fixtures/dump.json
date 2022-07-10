@@ -5,7 +5,7 @@
   "fields": {
     "prod_name": "Apple AirPods Pro",
     "description": "AirPods Pro feature Active Noise Cancellation for immersive sound. Transparency mode for hearing the world around you. They’re sweat and water resistant1 and have a customizable fit for all-day comfort.",
-    "prod_category": "audio/vidoe",
+    "prod_category": "audio/video",
     "balance": 100,
     "price": "199.00",
     "created_at": "2022-07-10T03:09:11.877Z",
@@ -18,7 +18,7 @@
   "fields": {
     "prod_name": "Bose SoundLink Revolve",
     "description": "SoundLink Revolve Bluetooth® speaker Triple Black. Small speaker. Big leap forward. Deep. Loud. And immersive, too. To make something so small feel so real, Bose took its sound in a new direction. Every direction. But don’t let the size of the SoundLink® Revolve speaker fool you. It’s the kind of performance you might not expect from this pint-sized enclosure.",
-    "prod_category": "audio/vidoe",
+    "prod_category": "audio/video",
     "balance": 90,
     "price": "169.00",
     "created_at": "2022-07-10T03:10:42.794Z",
