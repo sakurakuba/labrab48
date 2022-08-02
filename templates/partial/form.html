@@ -1,17 +1,14 @@
 {% csrf_token %}
-    <label>Category:</label><br/>
-    <select name = 'prod_category'>
-    {% for val, cat in categories %}
-       <option value="{{ val }}">{{ cat }}</option>
-    {% endfor %}
-        </select>
-    <br/>
-    <label>Product name:</label><br/>
-    <input type="text" name="prod_name" value="{{ product.prod_name }}"/><br/>
-    <label>Description:</label><br/>
-    <textarea name="description">{{ product.description }}</textarea><br/>
-    <label>Balance:</label><br/>
-    <input type="number" min="0" name="balance" value="{{ product.balance }}"/><br/>
-    <label>Price:</label><br/>
-    <input type="number" min="0.00" name="price" value="{{ product.price }}"/><br/>
-    <br/>
+
+{% for error in form.non_field_errors %}
+   <p class="form-error">{{ error }}</p>
+{% endfor %}
+
+{% for field in form %}
+   <p><label for="{{ field.id_for_label }}">{{ field.label }}</label></p>
+   {% for error in field.errors %}
+       <p class="form-error">{{ error }}</p>
+   {% endfor %}
+   <p>{{ field }}</p>
+{% endfor %}
+
