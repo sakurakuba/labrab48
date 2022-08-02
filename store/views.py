@@ -61,7 +61,7 @@ class IndexView(ListView):
     model = Product
     template_name = "index.html"
     context_object_name = "product"
-    ordering = ["-created_at"]
+    ordering = ["prod_category"]
     paginate_by = 5
 
     def get(self, request, *args, **kwargs):
@@ -72,7 +72,7 @@ class IndexView(ListView):
     def get_queryset(self):
         if self.search_value:
             return Product.objects.filter(Q(prod_name__contains=self.search_value) | Q(description__contains=self.search_value))
-        return Product.objects.order_by("-created_at")
+        return Product.objects.order_by("prod_name")
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=object_list, **kwargs)
