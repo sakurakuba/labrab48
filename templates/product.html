@@ -14,5 +14,14 @@
     <p>Category: {{ product.prod_category }}</p>
     <p>Currently available amount: {{ product.balance }}</p>
     <p>Price: {{ product.price }}</p>
+    <p>===========================</p>
+
+    <p>Want to buy? Just chose desired quantity and hit "Add to Cart"!</p>
+    <form action="{% url "product_add_to_cart" product.pk %}" method="post">
+    {% csrf_token %}
+{% include "partial/form.html" %}
+    Qty <input type="number" value="Qty"/>
+    <button type="submit" style="display: inline">Add to Cart</button>
+    </form>
 {% endblock %}
 

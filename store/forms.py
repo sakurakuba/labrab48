@@ -2,7 +2,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.forms import widgets
 
-from .models import Product
+from .models import Product, ItemInCart
 
 
 class ProductForm(forms.ModelForm):
@@ -31,3 +31,7 @@ class SearchForm(forms.Form):
     search = forms.CharField(max_length=50, required=False, label='Search')
 
 
+class ItemInCartForm(forms.ModelForm):
+    class Meta:
+        model = ItemInCart
+        fields = "__all__"

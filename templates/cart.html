@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load mathfilters %}
+{% block title %} Cart {% endblock %}
+{% block nav %}
+
+{% endblock %}
+{% block name %}
+<h2>Item(s) in cart:</h2>
+{% endblock %}
+{% block content %}
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Product name</th>
+      <th scope="col">Price for single product</th>
+      <th scope="col">Quantity</th>
+        <th scope="col">Total price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        {% for itm in items %}
+      <td>{{ itm.item.prod_name }}</td>
+      <td>{{ itm.item.price }}</td>
+      <td>{{ itm.item_qty }}</td>
+        <td>{{ itm.item.price|mul:itm.item_qty }}</td>
+    </tr>
+  </tbody>
+</table>
+    {% endfor %}
+{% endblock %}

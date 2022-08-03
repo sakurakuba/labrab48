@@ -1,4 +1,4 @@
-from django.core.validators import MinValueValidator
+from django.contrib import messages
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
 
@@ -7,55 +7,9 @@ from django.urls import reverse, reverse_lazy
 from django.utils.http import urlencode
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from store.forms import SearchForm, ProductForm
-from store.models import Product, CATEGORY_CHOICES
+from store.forms import SearchForm, ProductForm, ItemInCartForm
+from store.models import Product, ItemInCart
 
-
-# def index_view(request):
-#     product = Product.objects.order_by('prod_category', 'prod_name')
-#     return render(request, 'index.html', {"product": product})
-#
-#
-# def product_view(request, pk):
-#     product = get_object_or_404(Product, pk=pk)
-#     return render(request, 'product.html', {"product": product})
-#
-#
-# def product_add(request):
-#     if request.method == 'GET':
-#         return render(request, 'add.html', {'categories': CATEGORY_CHOICES})
-#     else:
-#         prod_name = request.POST.get('prod_name')
-#         description = request.POST.get('description')
-#         prod_category = request.POST.get('prod_category')
-#         balance = request.POST.get('balance')
-#         price = request.POST.get('price')
-#         new_product = Product.objects.create(prod_name=prod_name, description=description, prod_category=prod_category, balance=balance, price=price)
-#         return redirect('product_view', pk=new_product.pk)
-#
-#
-# def product_update(request, pk):
-#     product = get_object_or_404(Product, pk=pk)
-#     if request.method == 'GET':
-#         return render(request, 'update.html', {'product': product, 'categories': CATEGORY_CHOICES})
-#     else:
-#         product.prod_name = request.POST.get('prod_name')
-#         product.description = request.POST.get('description')
-#         product.prod_category = request.POST.get('prod_category')
-#         product.balance = request.POST.get('balance')
-#         product.price = request.POST.get('price')
-#         product.save()
-#         return redirect('product_view', pk=product.pk)
-#
-#
-# def product_delete(request, pk):
-#     product = get_object_or_404(Product, pk=pk)
-#     if request.method == 'GET':
-#         return render(request, 'delete.html', {'product': product})
-#     else:
-#         product.delete()
-#         return redirect('index')
-#
 
 class IndexView(ListView):
     model = Product
@@ -97,6 +51,7 @@ class ProductView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ProductView, self).get_context_data(**kwargs)
+        context['quantity'] = self.object.balance
         return context
 
 
@@ -106,12 +61,41 @@ class ProductCreate(CreateView):
 
 
 class ProductUpdate(UpdateView):
-        template_name = 'update.html'
-        form_class = ProductForm
-        model = Product
+    template_name = 'update.html'
+    form_class = ProductForm
+    model = Product
 
 
 class ProductDelete(DeleteView):
     model = Product
     template_name = "delete.html"
     success_url = reverse_lazy("index")
+
+
+class CartView(ListView):
+    model = ItemInCart
+    template_name = "cart.html"
+    context_object_name = "items"
+    ordering = ["item"]
+    paginate_by = 5
+
+
+class ProductAddToCart(CreateView):
+    template_name = 'cart.html'
+    form_class = ItemInCartForm
+
+    def form_valid(self, form):
+        product = get_object_or_404(Product, pk=self.kwargs.get("pk"))
+        form.instance.product = product
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse("product_view", kwargs={"pk": self.object.product.pk})
+
+
+
+
+
+
+
+

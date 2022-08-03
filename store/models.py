@@ -21,3 +21,12 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse('product_view', kwargs={"pk": self.pk})
+
+
+class ItemInCart(models.Model):
+    item = models.ForeignKey("store.Product", on_delete=models.CASCADE, related_name="items", verbose_name='item')
+    item_qty = models.IntegerField(validators=[MinValueValidator(1)], verbose_name="item quantity")
+
+    def __str__(self):
+        return f"{self.item}, quantity: {self.item_qty}"
+
